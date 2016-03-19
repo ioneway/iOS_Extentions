@@ -13,6 +13,7 @@
 		4A932ABE1C9DBDF70034D162 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A932ABC1C9DBDF70034D162 /* Main.storyboard */; };
 		4A932AC01C9DBDF70034D162 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A932ABF1C9DBDF70034D162 /* Assets.xcassets */; };
 		4A932AC31C9DBDF70034D162 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A932AC11C9DBDF70034D162 /* LaunchScreen.storyboard */; };
+		4A932ACE1C9DBF4C0034D162 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A932ACB1C9DBF4C0034D162 /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		4A932ABF1C9DBDF70034D162 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A932AC21C9DBDF70034D162 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A932AC41C9DBDF70034D162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A932ACA1C9DBF4C0034D162 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		4A932ACB1C9DBF4C0034D162 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 		4A932AB21C9DBDF70034D162 /* OC_Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				4A932ACA1C9DBF4C0034D162 /* UIView+Extension.h */,
+				4A932ACB1C9DBF4C0034D162 /* UIView+Extension.m */,
 				4A932AB61C9DBDF70034D162 /* AppDelegate.h */,
 				4A932AB71C9DBDF70034D162 /* AppDelegate.m */,
 				4A932AB91C9DBDF70034D162 /* ViewController.h */,
@@ -149,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A932ACE1C9DBF4C0034D162 /* UIView+Extension.m in Sources */,
 				4A932ABB1C9DBDF70034D162 /* ViewController.m in Sources */,
 				4A932AB81C9DBDF70034D162 /* AppDelegate.m in Sources */,
 				4A932AB51C9DBDF70034D162 /* main.m in Sources */,
@@ -300,6 +306,7 @@
 				4A932AC91C9DBDF70034D162 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
