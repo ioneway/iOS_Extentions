@@ -36,8 +36,20 @@ char *CDVNewBase64Encode(
 
 @interface NSData (Base64)
 
-+ (NSData*)dataFromBase64String:(NSString*)aString;
+/**
+ *  将base64字符串转换为原字符串对应的NSData
+ *
+ *  @param base64Str base64字符串
+ *
+ *  @return 返回NSData
+ */
++ (NSData*)dataFromBase64String:(NSString*)base64Str;
 
+/**
+ *  将NSData转换为原字符串对应的base64字符串
+ *
+ *  @return 返回base64字符串
+ */
 - (NSString*)base64EncodedString;
 
 @end

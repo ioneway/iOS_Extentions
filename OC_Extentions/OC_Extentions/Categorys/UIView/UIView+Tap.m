@@ -38,7 +38,6 @@ static const void *OWGestureRecognizerBlockKey = &OWGestureRecognizerBlockKey;
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(action:)];
     self.handlerAction = block;
     [self addGestureRecognizer:gesture];
-    
 }
 
 - (void)action:(UIGestureRecognizer *)recognizer
