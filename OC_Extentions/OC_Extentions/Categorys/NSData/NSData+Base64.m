@@ -275,17 +275,4 @@ char *CDVNewBase64Encode(
     return result;
 }
 
-+(NSData *)dataFromBase64String2:(NSString *)aString
-{
-    NSData *data = [aString dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *base64Encoded = [data base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    
-    return base64Encoded;
-}
-
-- (NSString*)base64EncodedString2
-{
-    NSString *base64Decoded = [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
-    return base64Decoded;
-}
 @end

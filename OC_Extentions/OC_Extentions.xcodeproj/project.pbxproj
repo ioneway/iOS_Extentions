@@ -12,6 +12,7 @@
 		4A2808711C9E729900B254DD /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2808701C9E729900B254DD /* NSString+Base64.m */; };
 		4A2808751C9E74A900B254DD /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2808741C9E74A900B254DD /* NSData+MD5.m */; };
 		4A2808791C9E764300B254DD /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2808781C9E764300B254DD /* UIImage+Util.m */; };
+		4A28087C1C9E777300B254DD /* UIView+Tap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A28087B1C9E777300B254DD /* UIView+Tap.m */; };
 		4A932AB51C9DBDF70034D162 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A932AB41C9DBDF70034D162 /* main.m */; };
 		4A932AB81C9DBDF70034D162 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A932AB71C9DBDF70034D162 /* AppDelegate.m */; };
 		4A932ABB1C9DBDF70034D162 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A932ABA1C9DBDF70034D162 /* ViewController.m */; };
@@ -32,6 +33,8 @@
 		4A2808741C9E74A900B254DD /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
 		4A2808771C9E764300B254DD /* UIImage+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Util.h"; sourceTree = "<group>"; };
 		4A2808781C9E764300B254DD /* UIImage+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Util.m"; sourceTree = "<group>"; };
+		4A28087A1C9E777300B254DD /* UIView+Tap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Tap.h"; sourceTree = "<group>"; };
+		4A28087B1C9E777300B254DD /* UIView+Tap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Tap.m"; sourceTree = "<group>"; };
 		4A932AB01C9DBDF70034D162 /* OC_Extentions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OC_Extentions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A932AB41C9DBDF70034D162 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4A932AB61C9DBDF70034D162 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 		4A2808691C9E56C100B254DD /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				4A28087A1C9E777300B254DD /* UIView+Tap.h */,
+				4A28087B1C9E777300B254DD /* UIView+Tap.m */,
 				4A28086A1C9E56C100B254DD /* UIView+Extension.h */,
 				4A28086B1C9E56C100B254DD /* UIView+Extension.m */,
 			);
@@ -223,6 +228,7 @@
 				4A932ABB1C9DBDF70034D162 /* ViewController.m in Sources */,
 				4A28086C1C9E56C100B254DD /* NSData+Base64.m in Sources */,
 				4A932AB81C9DBDF70034D162 /* AppDelegate.m in Sources */,
+				4A28087C1C9E777300B254DD /* UIView+Tap.m in Sources */,
 				4A932AB51C9DBDF70034D162 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
