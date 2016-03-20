@@ -1,9 +1,9 @@
 //
 //  UIView+Extension.h
-//  黑马微博2期
+//
 //
 //  Created by apple on 14-10-7.
-//  Copyright (c) 2014年 heima. All rights reserved.
+//  Copyright (c) 2014年 王伟. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -20,4 +20,11 @@
 @property (nonatomic, assign) CGFloat right;
 @property (nonatomic, assign) CGFloat bottom;
 @property (nonatomic, assign) CGFloat top;
+
+
+-(nullable UIImageView *)snapshot;
+-(void)subViewsTreeWithIndentation:(int)indentation;
+-(void)tapEventWithTarget:( _Nonnull id)target action:( _Nonnull SEL)action;
+-(void)tapGestureWithTarget:( _Nonnull id)target action:( _Nonnull SEL)action;
+-(void)tapGestureWithBlock:(void (^ _Nonnull )(UIGestureRecognizer * _Nonnull sender))block;
 @end

@@ -1,15 +1,22 @@
 //
 //  UIView+Extension.m
-//  黑马微博2期
+//
 //
 //  Created by apple on 14-10-7.
-//  Copyright (c) 2014年 heima. All rights reserved.
+//  Copyright (c) 2014年 王伟. All rights reserved.
 //
 
 #import "UIView+Extension.h"
+#import <objc/runtime.h>
+
+static const void *OWGestureRecognizerBlockKey = &OWGestureRecognizerBlockKey;
+
+@interface UIView (Internal)
+@property (nonatomic, copy, setter = setHandlerAction:, nullable) void (^handlerAction)(UIGestureRecognizer *sender);
+@end
 
 @implementation UIView (Extension)
-
+@dynamic left;
 
 - (void)setX:(CGFloat)x
 {
@@ -146,7 +153,7 @@
 }
 
 #pragma mark-  截图
-- (UIImageView *)snapshot
+- (nullable UIImageView *)snapshot
 {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -169,7 +176,6 @@
         for (int j = 0; j <= indentation; j++) {
             [currentViewDescription appendString:@" "];
         }
-        
         [currentViewDescription appendFormat:@"[%d]: '%@'", i, NSStringFromClass([currentSubView class])];
         
         NSLog(@"%@", currentViewDescription);
@@ -178,8 +184,63 @@
     }
 }
 
+#pragma mark-  点击事件
+/**
+ *  利用UIControler添加点击事件
+ *
+ *  @param target 事件接收对象
+ *  @param action 执行操作
+ 
+ *  @warning action消息参数为UIControl而非UIView
+ */
+-(void)tapEventWithTarget:(_Nonnull id)target action:(_Nonnull SEL)action
+{
+    UIControl *control = [[UIControl alloc] initWithFrame:self.bounds];
+    control.backgroundColor = [UIColor clearColor];
+    [control addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:control];
+}
 
+/**
+ *  利用UITapGestureRecognizer添加点击事件
+ *
+ *  @param target 事件接收对象
+ *  @param action 执行操作
+ 
+ *  @warning action消息参数为UITapGestureRecognizer而非UIView
+ */
+-(void)tapGestureWithTarget:(_Nonnull id)target action:(_Nonnull SEL)action
+{
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
+    [self addGestureRecognizer:gesture];
+}
 
+/**
+ *  利用UITapGestureRecognizer添加点击事件回调
+ *
+ *  @param block 接收一个UIGestureRecognizer对象，回调。
+ */
+-(void)tapGestureWithBlock:(void (^ _Nonnull )(UIGestureRecognizer * _Nonnull sender))block
+{
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(action:)];
+    self.handlerAction = block;
+    [self addGestureRecognizer:gesture];
+    
+}
 
+- (void)action:(UIGestureRecognizer *)recognizer
+{
+    self.handlerAction(recognizer);
+}
+
+- (void)setHandlerAction:(void (^)(UIGestureRecognizer *sender))handlerAction
+{
+    objc_setAssociatedObject(self, OWGestureRecognizerBlockKey, handlerAction, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void (^)(UIGestureRecognizer *sender))handlerAction
+{
+    return objc_getAssociatedObject(self, OWGestureRecognizerBlockKey);
+}
 
 @end
