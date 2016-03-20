@@ -1,7 +1,7 @@
 //
 //  NSData+Base64.h
 //  base64
-//  来源：Cordova
+//  来源 Cordova
 //  Created by Matt Gallagher on 2009/06/03.
 //  Copyright 2009 Matt Gallagher. All rights reserved.
 //
@@ -34,10 +34,10 @@ char *CDVNewBase64Encode(
     bool      separateLines,
     size_t    * outputLength);
 
-@interface NSData (CDVBase64)
+@interface NSData (Base64)
 
++ (NSData*)dataFromBase64String:(NSString*)aString;
 
-+ (NSData*)cdv_dataFromBase64String:(NSString*)aString;
-- (NSString*)cdv_base64EncodedString;
+- (NSString*)base64EncodedString;
 
 @end

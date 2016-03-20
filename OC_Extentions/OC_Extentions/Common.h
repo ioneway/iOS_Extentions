@@ -36,14 +36,14 @@
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-#define kColor(R,G,B,A) [UIColor colorWithRed:R/255.f green:G/255.f blue:B/255.f alpha:A]
-#define kWhiteColor     [UIColor whiteColor]
-#define kLightGrayColor [UIColor lightGrayColor]
-#define kBlackColor     [UIColor blackColor]
-#define kClearColor     [UIColor clearColor]
-#define kGrayColor      [UIColor grayColor]
-#define kRedColor      [UIColor redColor]
-#define kYellowColor      [UIColor yellowColor]
+#define kColor(R,G,B,A)     [UIColor colorWithRed:R/255.f green:G/255.f blue:B/255.f alpha:A]
+#define kWhiteColor         [UIColor whiteColor]
+#define kLightGrayColor     [UIColor lightGrayColor]
+#define kBlackColor         [UIColor blackColor]
+#define kClearColor         [UIColor clearColor]
+#define kGrayColor          [UIColor grayColor]
+#define kRedColor           [UIColor redColor]
+#define kYellowColor        [UIColor yellowColor]
 
 #define kGreenColor      [UIColor greenColor]
 #define kLineColor UIColorFromRGB(0xdbdbdb)
