@@ -35,5 +35,5 @@
  *
  *  @param block 接收一个UIGestureRecognizer对象，回调。
  */
--(void)tapGestureWithBlock:(void (^ _Nonnull )(UIGestureRecognizer * _Nonnull sender))block;
+-(void)tapGestureWithBlock:(void (^ _Nonnull)(UIGestureRecognizer * _Nonnull sender))block;
 @end

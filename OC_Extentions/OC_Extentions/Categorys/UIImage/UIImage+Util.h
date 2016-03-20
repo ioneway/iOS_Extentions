@@ -15,7 +15,16 @@
  *
  *  @return 返回base64值
  */
-- (NSString *) image2base64;
+- (NSString *) toBase64;
+
+/**
+ *  base64字符串转换为UIImage
+ *
+ *  @param base64Str base64字符串
+ *
+ *  @return 转换后的UIImage
+ */
++(UIImage *)fromeBase64:(NSString *)base64Str;
 
 /**
  *  图片旋转
@@ -25,4 +34,7 @@
  *  @return 旋转后的图片
  */
 - (UIImage *)rotation:(UIImageOrientation)orientation;
+
+
+
 @end

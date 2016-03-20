@@ -10,15 +10,8 @@
 
 @implementation UIImage (Util)
 
--(BOOL) imageHasAlpha
-{
-    CGImageAlphaInfo alpha = CGImageGetAlphaInfo(self.CGImage);
-    return (alpha == kCGImageAlphaFirst ||
-            alpha == kCGImageAlphaLast ||
-            alpha == kCGImageAlphaPremultipliedFirst ||
-            alpha == kCGImageAlphaPremultipliedLast);
-}
-- (NSString *) image2base64
+
+- (NSString *) toBase64
 {
     NSData *imageData = nil;
     NSString *mimeType = nil;
@@ -36,6 +29,14 @@
     
 }
 
+
++(UIImage *)fromeBase64:(NSString *)base64Str
+{
+    NSData *data   = [[NSData alloc] initWithBase64EncodedString:base64Str options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    UIImage *image = [UIImage imageWithData:data];
+    
+    return image;
+}
 
 - (UIImage *)rotation:(UIImageOrientation)orientation
 {
@@ -97,4 +98,13 @@
     return newPic;
 }
 
+#pragma mark- private
+-(BOOL) imageHasAlpha
+{
+    CGImageAlphaInfo alpha = CGImageGetAlphaInfo(self.CGImage);
+    return (alpha == kCGImageAlphaFirst ||
+            alpha == kCGImageAlphaLast ||
+            alpha == kCGImageAlphaPremultipliedFirst ||
+            alpha == kCGImageAlphaPremultipliedLast);
+}
 @end
