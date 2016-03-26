@@ -10,11 +10,15 @@ import UIKit
 
 extension UIColor {
 
-    convenience init(hex: String) {
-        self.init(hex: hex, alpha:1)
-    }
-
-    convenience init(hex: String, alpha: CGFloat) {
+    /**
+     通过十六进制颜色值和alpha值创建UIColor
+     
+     - parameter hex:   十六进制颜色值
+     - parameter alpha: 透明度,默认为1.0
+     
+     - returns: 返回UIColor实例
+     */
+    convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexWithoutSymbol = hex
         if hexWithoutSymbol.hasPrefix("#") {
             hexWithoutSymbol = hex.subString(fromIndex: 1)

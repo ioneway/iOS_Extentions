@@ -11,7 +11,7 @@ extension UIApplication {
     
     /// 是否是iphone4屏幕
     static let isiPhone4 = {
-        return (UIScreen.mainScreen().bounds.size.height == 480);
+        return (UIScreen.mainScreen().bounds.size.height == 480.0);
     }()
     
     /// 屏幕size
@@ -31,7 +31,34 @@ extension UIApplication {
         return width;
     }()
     
-    /// 是否隐藏StatusBar
+    /// 返回应用的uuid
+    static var uuid: String {
+        get{
+            let uuid: CFUUIDRef = CFUUIDCreate(nil);
+            let uuidStr: CFStringRef = CFUUIDCreateString(nil, uuid);
+            let result: String = CFStringCreateCopy( nil, uuidStr) as String;
+            
+            return result;
+        }
+    }
+    
+    /// 返回app的版本号
+    static var appVersion: String {
+        get {
+           let versionstr = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String;
+            return versionstr;
+        }
+    }
+    
+    /// 返回app的displayName
+    static var displayName: String {
+        get {
+            let name = NSBundle.mainBundle().infoDictionary!["CFBundleDisplayName"] as! String;
+            return name;
+        }
+    }
+    
+    /// 是否隐藏StatusBar,默认为false
     static var hiddeStatusBar:Bool {
         get{
             let window = UIApplication.sharedApplication().keyWindow;
@@ -61,9 +88,9 @@ extension UIApplication {
     /**
      按比例计算宽度
      
-     - parameter width: 假设屏宽320点为基准的宽度
+     - parameter height: 假设屏宽480点为基准的高度
      
-     - returns: 返回以实际屏宽为基准的宽度
+     - returns: 返回以实际屏宽为基准的高度
      */
    class func scaleHeight(height:CGFloat) ->CGFloat {
         let height1 = height*kScreenHeight()/480.0;
@@ -92,4 +119,6 @@ extension UIApplication {
             print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
         #endif
     }
+    
+
 }
