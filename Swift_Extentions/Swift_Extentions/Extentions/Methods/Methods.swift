@@ -1,6 +1,6 @@
 //
-//  Methods.swift
-//  ADSwitch
+//  NSData.swift
+//  Swift_Extentions
 //
 //  Created by weiwang on 16/3/6.
 //  Copyright © 2016年 王伟. All rights reserved.
@@ -39,3 +39,4 @@ func kHeight(height:CGFloat) ->CGFloat {
         return height2;
     }
 }
+

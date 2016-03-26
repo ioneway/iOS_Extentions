@@ -12,7 +12,7 @@ import ObjectiveC
 
 extension UIView {
   
-    var closure: ((sender: UIGestureRecognizer)->()){
+   private var closure: ((sender: UIGestureRecognizer)->()){
         get{
             return self.closure;
         }
@@ -56,6 +56,7 @@ extension UIView {
         self .addGestureRecognizer(gesture);
     }
     
+//MARK:- Private Method
     private func handleAction(recognizer: UITapGestureRecognizer){
         self.closure(sender: recognizer)
     }

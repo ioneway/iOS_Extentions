@@ -16,15 +16,15 @@ extension NSData {
     func md5()->String {
         // Create byte array of unsigned chars
         let digestLen = Int(CC_MD5_DIGEST_LENGTH);
-        var result = UnsafeMutablePointer<CUnsignedChar>.alloc(digestLen);
+        let result = UnsafeMutablePointer<CUnsignedChar>.alloc(digestLen);
         // Create 16 byte MD5 hash value, store in buffer
         CC_MD5(self.bytes, CC_LONG(self.length), result);
         
-        var hash = NSMutableString()
+        let hash = NSMutableString()
         for i in 0..<digestLen {
             hash.appendFormat("%02x", result[i])
         }
         result.dealloc(digestLen)
-        return String(format: hash)
+        return String(format: hash as String)
     }
 }

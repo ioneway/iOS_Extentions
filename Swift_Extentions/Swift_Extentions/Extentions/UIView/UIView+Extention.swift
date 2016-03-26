@@ -11,6 +11,11 @@ import UIKit
 
 extension UIView{
     
+    /**
+     返回任意UIView的截图
+     
+     - returns: 返回截图(UIImageView类型)
+     */
     func snapshot() ->UIImageView
     {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0.0);
@@ -23,6 +28,11 @@ extension UIView{
         return snapshot;
     }
     
+    /**
+     打印当前view的子树结构
+     
+     - parameter indentation: 打印层次
+     */
     func subViewsTree(indentation indentation : Int16){
         let subViews: [UIView] = self.subviews;
         for i in 0..<subViews.count {
@@ -32,7 +42,8 @@ extension UIView{
                 currentViewDescription = currentViewDescription + " ";
             }
             currentViewDescription = currentViewDescription + "\(i): " + "\(currentSubView.classForCoder)"
-            print(currentViewDescription);
+            UIApplication.printLog(currentViewDescription);
+
             
             currentSubView .subViewsTree(indentation: indentation+1);
         }

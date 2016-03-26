@@ -119,7 +119,7 @@ extension UIImage {
     
     
     //MARK: - Private Method
-    private func hasAlpha() ->Bool
+    private func hasAlphao() ->Bool
     {
         let alpha: CGImageAlphaInfo = CGImageGetAlphaInfo(self.CGImage);
         return (alpha == .First ||
