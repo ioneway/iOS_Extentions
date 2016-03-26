@@ -44,7 +44,6 @@ extension UIView{
             currentViewDescription = currentViewDescription + "\(i): " + "\(currentSubView.classForCoder)"
             UIApplication.printLog(currentViewDescription);
 
-            
             currentSubView .subViewsTree(indentation: indentation+1);
         }
     }
