@@ -9,27 +9,85 @@ import UIKit
 
 extension UIApplication {
     
-    /// 是否是iphone4屏幕
-    static let isiPhone4 = {
-        return (UIScreen.mainScreen().bounds.size.height == 480.0);
-    }()
+    /// 是否是iphone4
+    static var isiPhone4: Bool {
+        get{
+            return (UIScreen.mainScreen().bounds.size.height == 480.0);
+        }
+    }
+    
+    /// 是否是iphone5
+    static var isiPhone5: Bool {
+        get{
+            return (UIScreen.mainScreen().bounds.size.height == 568.0);
+        }
+    }
+    /// 是否是iphone6
+    static var isiPhone6: Bool {
+        get{
+            return (UIScreen.mainScreen().bounds.size.height == 667.0);
+        }
+    }
+    /// 是否是iphone6plus
+    static var isiPhone6plus: Bool {
+        get{
+            return (UIScreen.mainScreen().bounds.size.height ==  736.0);
+        }
+    }
+    
+    /// 判断是否是ipad
+    static var isIPad: Bool {
+        get {
+            return UI_USER_INTERFACE_IDIOM() == .Pad;
+        }
+    }
+    
+    /// 判断是否是iphone
+    static var isIPhone: Bool {
+        get {
+            return UI_USER_INTERFACE_IDIOM() == .Phone;
+        }
+    }
     
     /// 屏幕size
-    static let screenBounds = {
-        return UIScreen.mainScreen().bounds;
-    }()
+    static var screenBounds: CGRect{
+        get {
+            return UIScreen.mainScreen().bounds;
+
+        }
+    }
     
     /// 屏幕宽度
-    static let screenWidth: CGFloat = {
-        let width: CGFloat = UIScreen.mainScreen().bounds.width;
-        return width;
-    }()
+    static var screenWidth: CGFloat {
+        get{
+            let width: CGFloat = UIScreen.mainScreen().bounds.width;
+            return width;
+        }
+    }
     
     /// 屏幕高度
-    static let screenHeight: CGFloat = {
-        let width: CGFloat = UIScreen.mainScreen().bounds.height;
-        return width;
-    }()
+    static var screenHeight: CGFloat  {
+        get{
+            let height: CGFloat = UIScreen.mainScreen().bounds.height;
+            return height;
+        }
+    }
+    
+    /// 返回app的版本号
+    static var appVersion: String {
+        get {
+            let versionstr = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String;
+            return versionstr;
+        }
+    }
+    
+    /// 返回系统版本号
+    static var systemVersion: String {
+        get {
+            let versionstr = UIDevice.currentDevice().systemVersion;
+            return versionstr;
+        }
+    }
     
     /// 返回应用的uuid
     static var uuid: String {
@@ -41,15 +99,7 @@ extension UIApplication {
             return result;
         }
     }
-    
-    /// 返回app的版本号
-    static var appVersion: String {
-        get {
-           let versionstr = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String;
-            return versionstr;
-        }
-    }
-    
+
     /// 返回app的displayName
     static var displayName: String {
         get {
@@ -86,11 +136,11 @@ extension UIApplication {
     }
     
     /**
-     按比例计算宽度
+     按比例计算高度
      
      - parameter height: 假设屏宽480点为基准的高度
      
-     - returns: 返回以实际屏宽为基准的高度
+     - returns: 返回以实际屏高为基准的高度
      */
    class func scaleHeight(height:CGFloat) ->CGFloat {
         let height1 = height*kScreenHeight()/480.0;
