@@ -39,6 +39,7 @@ extension UIImage
         CGContextDrawImage(offscreenContext, CGRectMake(0, 0, CGFloat(width), CGFloat(height)), imageRef)
         let imageRefWithAlpha: CGImageRef = CGBitmapContextCreateImage(offscreenContext)!
         let imageWithAlpha: UIImage = UIImage(CGImage:imageRefWithAlpha)
+        
         return imageWithAlpha
         
     }

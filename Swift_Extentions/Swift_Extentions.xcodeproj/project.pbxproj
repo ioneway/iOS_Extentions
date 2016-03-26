@@ -27,6 +27,7 @@
 		4AFEECCD1CA648C10089806D /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFEECCC1CA648C10089806D /* String+Extention.swift */; };
 		4AFEECD01CA64B660089806D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFEECCF1CA64B660089806D /* UIColor.swift */; };
 		4AFEECD31CA64C580089806D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFEECD21CA64C580089806D /* UITableView+Extension.swift */; };
+		4AFEECD61CA68CB20089806D /* UIView+Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFEECD51CA68CB20089806D /* UIView+Corner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		4AFEECCC1CA648C10089806D /* String+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
 		4AFEECCF1CA64B660089806D /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		4AFEECD21CA64C580089806D /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		4AFEECD51CA68CB20089806D /* UIView+Corner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Corner.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		4A2808961C9EDFE600B254DD /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				4AFEECD51CA68CB20089806D /* UIView+Corner.swift */,
 				4A2808971C9EDFE600B254DD /* UIView+Extention.swift */,
 				4A2808981C9EDFE600B254DD /* UIView+Tap.swift */,
 			);
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A28089D1C9EDFE600B254DD /* UIImage+base64.swift in Sources */,
+				4AFEECD61CA68CB20089806D /* UIView+Corner.swift in Sources */,
 				4A45BB0C1C9FA4DC00C6CD52 /* UIImage+RoundCorner.swift in Sources */,
 				4A45BB0B1C9FA4DC00C6CD52 /* UIImage+ReSize.swift in Sources */,
 				4A28089C1C9EDFE600B254DD /* String+MD5.swift in Sources */,
